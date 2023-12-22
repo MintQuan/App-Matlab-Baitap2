@@ -1,4 +1,4 @@
-function v = lagranggeinterp(x,y,u)
+function v = Lagrange(x,y,u)
 if nargin<3
     u=sym('x');
 end
@@ -11,8 +11,8 @@ for i= 1:n
     end
     v=v+w*y(i);
      if nargin<3
-         v=simplify(v);
-         v=expand(v);
+         v = expand(v);
+         v = vpa(v,2);
      end
 end
 end
